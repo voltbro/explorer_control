@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="cyphal_bridge" type="cyphal_bridge_node"
+        name="cyphal_bridge" output="screen">
+  </node>
+
+</launch>

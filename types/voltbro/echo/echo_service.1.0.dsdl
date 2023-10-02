@@ -1,0 +1,5 @@
+uavcan.primitive.String.1.0 ping
+@sealed
+---
+uavcan.primitive.String.1.0 pong
+@sealed

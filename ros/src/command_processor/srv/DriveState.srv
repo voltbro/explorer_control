@@ -1,0 +1,12 @@
+uint8 GEAR_1=1
+uint8 GEAR_2=2
+uint8 GEAR_3=3
+
+uint8 MODE_OFF=1
+uint8 MODE_ON=2
+
+uint8 gear
+uint8 mode
+---
+
+bool ok

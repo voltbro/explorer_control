@@ -1,0 +1,26 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+trim_trailing_whitespace = true
+end_of_line = lf
+max_line_length = 80
+insert_final_newline = true
+
+[Makefile]
+max_line_length = off
+indent_style = tab
+
+[*.{json,yml,xml}]
+indent_size = 2
+
+[*.{c,h,cpp,hpp}]
+indent_size = 4
+
+[*.py]
+max_line_length = 100
+indent_size = 4
+
+[*.md]
+max_line_length = off

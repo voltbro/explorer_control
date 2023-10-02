@@ -1,0 +1,84 @@
+{
+  // Optimization
+  "files.exclude": {
+    "**/tmp/**": true,
+    "**/node_modules/**": true,
+    "**/.git/objects/**": true,
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/dist/**": true,
+    "**/devel/**": true,
+    "**/build/**": true
+  },
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/tmp/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true
+  },
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportGeneralTypeIssues": "warning"
+  },
+  "python.analysis.downloadStubs": true,
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/common",
+    "/opt/ros/noetic/lib/python3/dist-packages",
+    "${workspaceFolder}/tools"
+  ],
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/common",
+    "/opt/ros/noetic/lib/python3/dist-packages",
+    "${workspaceFolder}/tools"
+  ],
+  "ros.distro": "noetic",
+  "cmake.configureOnOpen": false,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "spellright.ignoreFiles": [
+    "**/.gitignore",
+    "**/.spellignore"
+  ],
+  "spellright.language": [
+    "ru",
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ],
+  "spellright.parserByClass": {
+    "dsdl": {
+      "parser": "code"
+    }
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "C_Cpp.files.exclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/dist/**": true,
+    "**/devel/**": true,
+    "**/build/**": true,
+    "**/.vscode": true,
+    "**/.vs": true
+  },
+  "C_Cpp.codeAnalysis.exclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/dist/**": true,
+    "**/devel/**": true,
+    "**/build/**": true,
+    "**/.vscode": true,
+    "**/.vs": true
+  }
+}

@@ -1,0 +1,9 @@
+[submodule "external/libcyphal"]
+	path = external/libcyphal
+	url = git@github.com:VBCores/libcyphal.git
+[submodule "external/drivers/src/bosch_imu"]
+	path = external/drivers/src/bosch_imu
+	url = https://github.com/mdrwiega/bosch_imu_driver.git
+[submodule "external/public_regulated_data_types"]
+	path = external/public_regulated_data_types
+	url = https://github.com/OpenCyphal/public_regulated_data_types.git

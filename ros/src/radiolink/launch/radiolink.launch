@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="radiolink" type="link.py"
+        name="radiolink" output="screen">
+  </node>
+
+</launch>

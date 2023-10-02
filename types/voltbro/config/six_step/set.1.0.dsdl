@@ -1,0 +1,5 @@
+voltbro.config.six_step.values.1.0 new_config
+@sealed
+---
+voltbro.config.six_step.log_item.1.0 log_item
+@sealed

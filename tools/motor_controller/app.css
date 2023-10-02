@@ -1,0 +1,49 @@
+MotorView {
+    layout: grid;
+    grid-size: 3 4;
+    grid-rows: 4;
+    grid-columns: 1fr;
+    grid-gutter: 0;
+    background: $boost;
+    height: 17;
+    margin: 1;
+    min-width: 10;
+    padding: 0;
+}
+
+MotorLog {
+    content-align: center top;
+    column-span: 3;
+    background: blue 30%;
+    row-span: 2;
+    height: 8
+}
+
+MotorDesc {
+    text-style: bold reverse;
+    content-align: center middle;
+    height: 3;
+}
+
+TextRect {
+    content-align: center middle;
+    height: 3;
+}
+
+Button {
+    width: 1;
+    height: 3;
+}
+
+#start {
+    dock: left;
+}
+
+#stop {
+    dock: left;
+    display: none;
+}
+
+#reset {
+    dock: right;
+}

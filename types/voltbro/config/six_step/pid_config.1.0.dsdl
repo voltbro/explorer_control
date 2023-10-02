@@ -1,0 +1,6 @@
+uavcan.primitive.scalar.Real64.1.0 p_gain
+uavcan.primitive.scalar.Real64.1.0 i_gain
+uavcan.primitive.scalar.Real64.1.0 d_gain
+uavcan.primitive.scalar.Real64.1.0 integral_error_lim
+uavcan.primitive.scalar.Real64.1.0 tolerance
+@extent 64 * 5

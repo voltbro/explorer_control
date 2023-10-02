@@ -1,0 +1,3 @@
+uavcan.primitive.scalar.Real64.1.0 integral_error
+uavcan.primitive.scalar.Real64.1.0 signal
+@extent 64 * 2

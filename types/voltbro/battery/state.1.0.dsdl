@@ -1,0 +1,17 @@
+uavcan.si.unit.voltage.Scalar.1.0 voltage
+uavcan.si.unit.electric_current.Scalar.1.0 current
+uavcan.si.unit.electric_charge.Scalar.1.0 charge
+
+uavcan.si.unit.electric_charge.Scalar.1.0 capacity
+uavcan.si.unit.electric_charge.Scalar.1.0 design_capacity
+
+uavcan.primitive.scalar.Integer8.1.0 power_supply_status
+uavcan.primitive.scalar.Integer8.1.0 power_supply_health
+uavcan.primitive.scalar.Integer8.1.0 power_supply_technology
+
+uavcan.primitive.scalar.Integer8.1.0 is_present
+
+uavcan.primitive.String.1.0 location
+uavcan.primitive.String.1.0 serial_number
+
+@extent 4320

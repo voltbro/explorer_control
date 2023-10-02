@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="command_processor" type="processor.py"
+        name="command_processor" output="screen">
+  </node>
+
+</launch>

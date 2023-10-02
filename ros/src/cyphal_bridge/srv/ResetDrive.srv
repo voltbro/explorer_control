@@ -1,0 +1,5 @@
+uint32 drive
+
+---
+
+bool[4] has_responded

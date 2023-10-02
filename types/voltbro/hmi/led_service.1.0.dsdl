@@ -1,0 +1,11 @@
+uavcan.primitive.scalar.Integer8.1.0 r
+uavcan.primitive.scalar.Integer8.1.0 g
+uavcan.primitive.scalar.Integer8.1.0 b
+
+uavcan.si.unit.duration.Scalar.1.0 duration
+uavcan.si.unit.frequency.Scalar.1.0 frequency
+
+@sealed
+---
+uavcan.primitive.scalar.Bit.1.0 accepted
+@sealed

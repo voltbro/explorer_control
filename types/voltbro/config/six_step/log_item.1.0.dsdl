@@ -1,0 +1,16 @@
+uavcan.primitive.scalar.Integer8.1.0 is_on
+uavcan.primitive.scalar.Integer8.1.0 is_stalling
+
+uavcan.primitive.scalar.Real32.1.0 target_speed
+uavcan.primitive.scalar.Real32.1.0 speed
+uavcan.primitive.scalar.Real32.1.0 elec_theta
+uavcan.primitive.scalar.Integer32.1.0 PWM
+
+uavcan.primitive.scalar.Real32.1.0 I_A
+uavcan.primitive.scalar.Real32.1.0 I_B
+uavcan.primitive.scalar.Real32.1.0 I_C
+
+voltbro.config.six_step.pid_report.1.0 velocity_report
+voltbro.config.six_step.pid_report.1.0 current_report
+
+@extent 560

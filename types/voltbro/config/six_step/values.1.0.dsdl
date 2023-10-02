@@ -1,0 +1,24 @@
+uavcan.primitive.scalar.Integer8.1.0 predict_change
+uavcan.primitive.scalar.Integer8.1.0 detect_stall
+
+uavcan.primitive.scalar.Real32.1.0 encoder_filtering
+uavcan.primitive.scalar.Real32.1.0 speed_filtering
+uavcan.primitive.scalar.Real32.1.0 sampling_interval
+uavcan.primitive.scalar.Real32.1.0 stall_timeout
+uavcan.primitive.scalar.Real32.1.0 stall_tolerance
+uavcan.primitive.scalar.Real32.1.0 current_limit
+
+uavcan.primitive.scalar.Real32.1.0 speed_mult
+uavcan.primitive.scalar.Real32.1.0 I_mult
+uavcan.primitive.scalar.Real32.1.0 PWM_mult
+uavcan.primitive.scalar.Integer32.1.0 max_PWM_per_s
+
+uavcan.primitive.scalar.Real32.1.0 speed_const
+uavcan.primitive.scalar.Real32.1.0 torque_const
+uavcan.primitive.scalar.Real32.1.0 max_current
+uavcan.primitive.scalar.Real32.1.0 stall_current
+
+voltbro.config.six_step.pid_config.1.0 velocity_pid
+voltbro.config.six_step.pid_config.1.0 current_pid
+
+@extent 1168

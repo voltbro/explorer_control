@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "/opt/voltbro"
+		}
+	],
+	"settings": {
+		"terminal.integrated.env.linux": {
+			"BASH_INIT_COMMAND": "source /home/pi/explorer_control/setup.sh"
+		},
+		"search.followSymlinks": true,
+		"editor.wordWrapColumn": 120,
+		"editor.rulers": [
+			120
+		],
+		"files.associations": {
+			"*.common": "c",
+			"canard.h": "c",
+			"*.dsdl": "dsdl"
+		}
+	}
+}
