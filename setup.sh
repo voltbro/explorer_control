@@ -33,7 +33,7 @@ popd > /dev/null
 # Usefull functions
 
 function clear_ros() {
-    rm -rf "${EXTERNAL_DIR}/drivers/build" "${EXTERNAL_DIR}/drivers/devel" "${EXTERNAL_DIR}/drivers>"
+    rm -rf "${EXTERNAL_DIR}/drivers/build" "${EXTERNAL_DIR}/drivers/devel" "${EXTERNAL_DIR}/drivers/install"
     rm -rf "${ROS_DIR}/build" "${ROS_DIR}/devel" "${ROS_DIR}/install"
 }
 
