@@ -1,4 +1,4 @@
-pycyphal[transport-can-pythoncan,transport-serial,transport-udp]
+pycyphal[transport-can-pythoncan,transport-serial,transport-udp]==1.15.0
 python-can==4.0.0
 textual==0.22.3
 
@@ -10,5 +10,13 @@ spidev==3.5
 rospkg==1.5.0
 empy==3.3.4
 
+yakut[joystick]
+nunavut==1.9.0
+
 # "--install-layout" error, see https://github.com/ros/catkin/issues/863
 setuptools==45.2.0
+
+# scripts deps
+colorama==0.4.3
+click==7.0
+inquirer==3.1.3

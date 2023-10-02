@@ -1,6 +1,6 @@
 [submodule "external/libcyphal"]
 	path = external/libcyphal
-	url = git@github.com:VBCores/libcyphal.git
+	url = https://github.com/VBCores/libcyphal.git
 [submodule "external/drivers/src/bosch_imu"]
 	path = external/drivers/src/bosch_imu
 	url = https://github.com/mdrwiega/bosch_imu_driver.git

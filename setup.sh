@@ -6,7 +6,7 @@ echo "Root is - ${toplevel_dir}"
 
 export PROJECT_ROOT=${toplevel_dir}
 
-# Setup sscripts
+# Setup scripts
 export PROJECT_SCRIPTS_ROOT=${PROJECT_ROOT}/scripts
 source ${PROJECT_SCRIPTS_ROOT}/_utils/_base.sh
 
@@ -26,14 +26,14 @@ export YAKUT_PATH=${YAKUT_COMPILE_OUTPUT}
 # and some more in .bashrc
 
 pushd . > /dev/null
-cd $ROVER_PROJECT_ROOT
+cd $PROJECT_ROOT
 # Any commands relative to top dir
 popd > /dev/null
 
 # Usefull functions
 
 function clear_ros() {
-    rm -rf "${EXTERNAL_DIR}/drivers/build" "${EXTERNAL_DIR}/drivers/devel" "${EXTERNAL_DIR}/drivers/install"
+    rm -rf "${EXTERNAL_DIR}/drivers/build" "${EXTERNAL_DIR}/drivers/devel" "${EXTERNAL_DIR}/drivers>"
     rm -rf "${ROS_DIR}/build" "${ROS_DIR}/devel" "${ROS_DIR}/install"
 }
 
@@ -47,3 +47,6 @@ function link_libcyphal() {
     mkdir -p ${1:-$cwd}/libs
     ln -s $(realpath --relative-to=./libs "$EXTERNAL_DIR"/libcyphal) ${1:-$cwd}/libs/libcyphal
 }
+
+cecho -c 'green' "Sourced all"
+return 0

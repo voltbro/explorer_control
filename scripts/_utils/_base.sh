@@ -67,4 +67,6 @@ information () {
 
 information "Sourced _base script\n"
 
-source ${PROJECT_ROOT}/.env
+env_file="${PROJECT_ROOT}/.env"
+test -f ${env_file} && source ${env_file}
+return 0
