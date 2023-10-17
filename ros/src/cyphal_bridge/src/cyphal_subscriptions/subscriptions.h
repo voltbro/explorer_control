@@ -17,13 +17,8 @@
 #include <nav_msgs/Odometry.h>
 #include <sensor_msgs/BatteryState.h>
 
+#include "../consts.h"
 #include "../bases.h"
-
-#define CID_BR 16
-#define CID_BL 8
-#define CID_FR 4
-#define CID_FL 2
-#define CID_PWR 9
 
 class MotorService: public AbstractSubscription<uavcan_register_Access_Response_1_0> {
 private:

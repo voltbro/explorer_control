@@ -17,6 +17,7 @@
 
 CyphalInterface* interface;
 
+PowerServicesProvider* power_services          = nullptr;
 MotorService* motor_service                    = nullptr;
 BatteryService* battery_service                = nullptr;
 OdometryService* odometry_service              = nullptr;
@@ -25,7 +26,7 @@ HMIHandler* hmi_handler                        = nullptr;
 ResetDriveProvider* reset_provider             = nullptr;
 std::array<WheelVelHandler*, 4> wheel_handlers = {nullptr, nullptr, nullptr, nullptr};
 
-#define DELETE_SAFE(ptr) if (ptr != nullptr) delete ptr;
+#define DELETE_SAFE(ptr) {delete ptr; ptr = nullptr;}
 
 void error_handler() {std::cout << "Error in libcyhpal: " << std::endl << boost::stacktrace::stacktrace(); exit(1);}
 
@@ -56,6 +57,8 @@ void signalFinalizer(int signum) {
     DELETE_SAFE(hmi_handler);
     std::cout << "Attempting to delete reset_provider" << std::endl;
     DELETE_SAFE(reset_provider);
+    std::cout << "Attempting to delete power_services" << std::endl;
+    DELETE_SAFE(power_services);
 
     std::cout << "Checking if cyphal is running" << std::endl;
     if (interface->is_up()) {
@@ -90,6 +93,7 @@ int main(int argc, char** argv) {
 
     hmi_handler = new HMIHandler(interface, ros_node, "/hmi/beeper", "/hmi/led", 9);
     reset_provider = new ResetDriveProvider(ros_node, motor_service);
+    power_services = new PowerServicesProvider(interface, ros_node);
 
     WheelVelHandler handler_bl(ros_node, "wheel_vel/bl", CID_BL, motor_service);
     WheelVelHandler handler_br(ros_node, "wheel_vel/br", CID_BR, motor_service, true);
@@ -116,10 +120,10 @@ int main(int argc, char** argv) {
             odometry_service->publish();
         })
         EACH_N_TICKS(500, last_down_check, {
-            bool has_missing = hbeat_service->is_anyone_down(tick);
-            if (has_missing) {
+            if (hbeat_service->is_anyone_down(tick)) {
                 hmi_handler->send_color(255, 0, 0);
-                hmi_handler->send_beep(0.5, 4);
+                hmi_handler->send_beep(1, 1);
+                power_services->call_reboot();
             }
             else {
                 hmi_handler->reset_color();

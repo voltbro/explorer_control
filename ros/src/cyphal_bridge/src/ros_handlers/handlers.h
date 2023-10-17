@@ -6,12 +6,14 @@
 #include <cyphal_bridge/HMIBeeper.h>
 #include <cyphal_bridge/HMILed.h>
 #include <cyphal_bridge/ResetDrive.h>
+#include <cyphal_bridge/PowerReset.h>
 
 #include <ros/ros.h>
 #include <cyphal/subscriptions/subscription.h>
 #include <libcanard/canard.h>
 
 #include "../cyphal_subscriptions/subscriptions.h"
+#include "../consts.h"
 #include "../bases.h"
 
 template <typename T>
@@ -98,4 +100,15 @@ public:
         ServiceProvider(node, "/reset_drives"),
         motor_service(motor_service) {};
     bool callback(cyphal_bridge::ResetDrive::Request&, cyphal_bridge::ResetDrive::Response&) override;
+};
+
+class PowerServicesProvider: ServiceProvider<cyphal_bridge::PowerReset> {
+private:
+    CyphalInterface* interface;
+public:
+    PowerServicesProvider(CyphalInterface* interface, ros::NodeHandle& node):
+        ServiceProvider(node, "/power/reset"),
+        interface(interface) {}
+    bool callback(cyphal_bridge::PowerReset::Request&, cyphal_bridge::PowerReset::Response&) override;
+    void call_reboot();
 };

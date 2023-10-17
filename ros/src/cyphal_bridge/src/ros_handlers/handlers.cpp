@@ -1,5 +1,6 @@
 #include <cmath>
 
+#include <uavcan/node/ExecuteCommand_1_1.h>
 #include <voltbro/hmi/beeper_service_1_0.h>
 #include <voltbro/hmi/led_service_1_0.h>
 
@@ -117,5 +118,33 @@ bool ResetDriveProvider::callback(
         default:
             return false;
     }
+    return true;
+}
+
+static uint8_t command_buf[uavcan_node_ExecuteCommand_Request_1_1_EXTENT_BYTES_];
+static CanardTransferID command_transfer_id = 0;
+void PowerServicesProvider::call_reboot() {
+    uavcan_node_ExecuteCommand_Request_1_1 command = {0};
+    command.command = uavcan_node_ExecuteCommand_Request_1_1_COMMAND_RESTART;
+
+    interface->SEND_TRANSFER(
+        uavcan_node_ExecuteCommand_Request_1_1,
+        &command,
+        command_buf,
+        uavcan_node_ExecuteCommand_1_1_FIXED_PORT_ID_,
+        &command_transfer_id,
+        CanardPriorityNominal,
+        CanardTransferKindRequest,
+        CID_PWR
+    );
+}
+
+bool PowerServicesProvider::callback(
+    cyphal_bridge::PowerReset::Request& request,
+    cyphal_bridge::PowerReset::Response& response
+) {
+    // TODO: real response
+    call_reboot();
+    response.ok = true;
     return true;
 }
